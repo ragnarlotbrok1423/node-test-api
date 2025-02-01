@@ -11,8 +11,18 @@ const user = [
     id: 1,
     email: "erick.gonza12@gmail.com",
     password: "123456",
+    name: "Erick",
+    lastname: "Gonzalez",
+    cellphone: "1234567890",
   },
-  { id: 2, email: "jorge.j@gmail.com", password: "54321" },
+  {
+    id: 2,
+    email: "jorge.j@gmail.com",
+    password: "54321",
+    name: "Jorge",
+    lastname: "Jimenez",
+    cellphone: "0987654321",
+  },
 ];
 
 app.get("/", (req, res) => {
@@ -28,6 +38,9 @@ app.post("/api/user", (req, res) => {
     id: user.length + 1,
     email: req.body.email,
     password: req.body.password,
+    name: req.body.name,
+    lastname: req.body.lastname,
+    cellphone: req.body.cellphone,
   };
   user.push(newUser);
   res.send(newUser);
